@@ -10,7 +10,7 @@
         <table class="table">
           <thead>
           <tr >
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">ID</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">#</th>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-7">Название</th>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Категория</th>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Приоритет</th>
@@ -20,11 +20,11 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let task of tasks">
+          <tr *ngFor="let task of tasks; let i = index">
             <td>
               <div class="d-flex">
                 <div>
-                  {{task.id}}
+                  {{i+1}}
                 </div>
               </div>
             </td>
@@ -36,10 +36,10 @@
               </div>
             </td>
             <td>
-              <p class="text-sm font-weight-bold mb-0">category</p>
+              <p class="text-sm font-weight-bold mb-0">{{task.category ? task.category.title : 'Нет категории'}}</p>
             </td>
             <td>
-              <span class="text-xs font-weight-bold">priority</span>
+              <span class="text-xs font-weight-bold">{{task.priority ? task.priority.title : 'Нет приоритета'}}</span>
             </td>
             <td class="">
               <div class="d-flex">
@@ -48,7 +48,7 @@
             </td>
             <td class="">
               <div class="d-flex">
-                <span class="text-xs font-weight-bold">Дата</span>
+                <span class="text-xs font-weight-bold">{{task.date ? (task.date | date : 'medium') : 'Нет даты'}}</span>
               </div>
             </td>
 

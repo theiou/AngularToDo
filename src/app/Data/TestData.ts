@@ -25,7 +25,8 @@ export class TestData {
       title: 'Что-то сделать',
       priority: TestData.priorities[1],
       completed: false,
-      category: TestData.categories[4]
+      category: TestData.categories[4],
+      date: new Date('2022-08-29')
     },
     {
       id: 2,
