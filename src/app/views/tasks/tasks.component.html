@@ -1,0 +1,61 @@
+<div class="col-12">
+  <div class="card my-4">
+    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+      <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+        <h6 class="text-white text-capitalize ps-3 text-lg">Список задач</h6>
+      </div>
+    </div>
+    <div class="card-body px-0 pb-2">
+      <div class="table-responsive p-0">
+        <table class="table">
+          <thead>
+          <tr >
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">ID</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-7">Название</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Категория</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Приоритет</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Статус</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-0">Дата</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let task of tasks">
+            <td>
+              <div class="d-flex">
+                <div>
+                  {{task.id}}
+                </div>
+              </div>
+            </td>
+            <td class="">
+              <div class="d-flex">
+                <div class="">
+                  {{task.title}}
+                </div>
+              </div>
+            </td>
+            <td>
+              <p class="text-sm font-weight-bold mb-0">category</p>
+            </td>
+            <td>
+              <span class="text-xs font-weight-bold">priority</span>
+            </td>
+            <td class="">
+              <div class="d-flex">
+                <span class="text-xs font-weight-bold">{{task.completed}}</span>
+              </div>
+            </td>
+            <td class="">
+              <div class="d-flex">
+                <span class="text-xs font-weight-bold">Дата</span>
+              </div>
+            </td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
