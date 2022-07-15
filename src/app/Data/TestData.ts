@@ -53,7 +53,7 @@ export class TestData {
       id: 5,
       title: 'Что-то сделать5',
       priority: TestData.priorities[2],
-      completed: true,
+      completed: false,
       category: TestData.categories[2]
     },
     {

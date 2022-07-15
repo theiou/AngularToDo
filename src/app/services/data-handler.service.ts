@@ -23,7 +23,7 @@ export class DataHandlerService {
     this.categorySubject.next(TestData.categories);
   }
 
-  fillTasksByCategory(category: Category){
+  fillTasksByCategory(category: Category) {
     const tasks = TestData.tasks.filter(value => value.category === category);
     this.tasksSubject.next(tasks);
   }

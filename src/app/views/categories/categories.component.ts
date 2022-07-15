@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/models/Category';
-import { DataHandlerService } from 'src/app/services/data-handler.service';
+import {Component, OnInit} from '@angular/core';
+import {Category} from 'src/app/models/Category';
+import {DataHandlerService} from 'src/app/services/data-handler.service';
 
 @Component({
   selector: 'app-categories',
@@ -12,7 +12,8 @@ export class CategoriesComponent implements OnInit {
   categories!: Category[];
   selectedCategory!: Category;
 
-  constructor(private dataHandler: DataHandlerService) { }
+  constructor(private dataHandler: DataHandlerService) {
+  }
 
   ngOnInit(): void {
     this.dataHandler.categorySubject.subscribe(categories => this.categories = categories);
