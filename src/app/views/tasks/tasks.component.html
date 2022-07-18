@@ -5,7 +5,8 @@
         <h6 class="text-white text-capitalize ps-3 text-lg">Список задач</h6>
       </div>
     </div>
-    <div class="card-body table-responsive">
+    <div *ngIf="tasks.length == 0"><p>нет данных</p></div>
+    <div class="card-body table-responsive" *ngIf="tasks.length > 0">
         <table [dataSource]="dataSource" mat-table matSort>
 
           <ng-container matColumnDef="color">
