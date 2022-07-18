@@ -16,7 +16,7 @@ export class DataHandlerService {
   }
 
   fillTasks() {
-    this.categorySubject.next(TestData.tasks);
+    this.tasksSubject.next(TestData.tasks);
   }
 
   fillCategories() {

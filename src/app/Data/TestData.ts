@@ -54,7 +54,7 @@ export class TestData {
       title: 'Что-то сделать5',
       priority: TestData.priorities[2],
       completed: false,
-      category: TestData.categories[2]
+      category: TestData.categories[2],
     },
     {
       id: 6,
