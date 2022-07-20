@@ -4,6 +4,8 @@ import {Task} from "../../models/Task";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import {MatDialog} from "@angular/material/dialog";
+import {EditTaskDialogComponent} from "../../dialog/edit-task-dialog/edit-task-dialog.component";
 
 @Component({
   selector: 'app-tasks',
@@ -14,6 +16,8 @@ export class TasksComponent implements OnInit, AfterViewInit {
 
   displayedColumns: String[] = ['color', 'id', 'title', 'date', 'priority', 'category'];
   dataSource: MatTableDataSource<Task> = new MatTableDataSource();
+
+
 
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
@@ -30,7 +34,7 @@ export class TasksComponent implements OnInit, AfterViewInit {
     this.fillTable();
   }
 
-  constructor(private dataHandler: DataHandlerService) {
+  constructor(private dataHandler: DataHandlerService, private dialog: MatDialog) {
   }
 
   ngAfterViewInit(): void {
@@ -39,6 +43,11 @@ export class TasksComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.fillTable();
+  }
+
+  openEditTaskDialog(task: Task){
+    const dialogRef = this.dialog.open(EditTaskDialogComponent, {data: [task, 'Редактирвоание задачи'], autoFocus:false})
+    dialogRef.afterClosed().subscribe();
   }
 
   toggleCompleted(task: Task): void {
