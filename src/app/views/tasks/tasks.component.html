@@ -41,7 +41,7 @@
 
           <tr *matHeaderRowDef="displayedColumns;" mat-header-row></tr>
 
-          <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+          <tr *matRowDef="let row; columns: displayedColumns;" (click)="getSelectedTask(row)" mat-row></tr>
 
         </table>
 

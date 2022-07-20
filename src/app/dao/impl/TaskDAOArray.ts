@@ -12,52 +12,52 @@ export class TaskDAOArray implements TaskDAO {
   }
 
   add(obj: Task): Observable<Task> {
-    // @ts-ignore
     return undefined;
   }
 
 
   delete(id: number): Observable<Task> {
-    // @ts-ignore
     return undefined;
   }
 
 
   get(id: number): Observable<Task> {
-    // @ts-ignore
     return undefined;
   }
 
 
   getCompletedCountInCategory(category: Category): Observable<number> {
-    // @ts-ignore
     return undefined;
   }
 
   getTotalCount(): Observable<number> {
-    // @ts-ignore
     return undefined;
   }
 
   getTotalCountInCategory(category: Category): Observable<number> {
-    // @ts-ignore
     return undefined;
   }
 
   getUncompletedCountInCategory(category: Category): Observable<number> {
-    // @ts-ignore
     return undefined;
   }
 
 
-  search(category: Category, searchText: string, status: boolean, priority: Priority): Observable<Task[]> {
-    // @ts-ignore
-    return undefined;
+  search(category: Category): Observable<Task[]> {
+    return of(this.searchTasks(category));
+  }
+
+  private searchTasks(category: Category): Task[]{
+    let correctTasks = TestData.tasks;
+    if (category != null) {
+      correctTasks = correctTasks.filter(task => task.category === category)
+    }
+    return correctTasks;
+
   }
 
 
   update(obj: Task): Observable<Task> {
-    // @ts-ignore
     return undefined;
   }
 

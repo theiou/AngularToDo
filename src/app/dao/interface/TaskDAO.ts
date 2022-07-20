@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 import {Task} from "../../models/Task";
 
 export interface TaskDAO extends CommonDAO<Task> {
-  search(category: Category, searchText: string, status: boolean, priority: Priority): Observable<Task[]>;
+  search(category: Category): Observable<Task[]>;
 
   getCompletedCountInCategory(category: Category): Observable<number>;
 
